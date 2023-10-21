@@ -10,11 +10,10 @@ struct Corredor {
 char categoria[20];
 
 void setup() {
-  Serial.begin(9600); // Inicia la comunicación serial a 115200 baudios
+  Serial.begin(9600); 
 
-  // Limpiar el búfer de entrada
   while (Serial.available()) {
-    Serial.read(); // Lee y descarta cualquier carácter en el búfer de entrada
+    Serial.read(); 
   }
 }
 
@@ -24,7 +23,7 @@ void loop() {
 
   Serial.println("Edad: ");
   while (!Serial.available()) {
-    // Espera a que se ingrese la edad
+    
   }
   c1.edad = Serial.parseInt();
   Serial.println(c1.edad);
@@ -43,7 +42,7 @@ void loop() {
     strcpy(categoria, "Veterano");
   }
 
-  // Datos del corredor
+  
   Serial.println("\n\nDatos del corredor:");
   Serial.print("Nombre: ");
   Serial.println(c1.nombre);
@@ -56,7 +55,7 @@ void loop() {
   Serial.print("Categoría: ");
   Serial.println(categoria);
 
-  // Espera a que se cierre el monitor serial antes de reiniciar
+ 
   while (Serial.available()) {
     Serial.read();
   }
